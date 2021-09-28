@@ -44,12 +44,18 @@
         </div>
     </div>
     <div class="row">
-        <div class="form-group">
-            <label for="Expedited">Expedited Shipping</label>
-            <input id="Expedited" [(ngModel)]="shipping.shipping_method" type="radio" class="form-control">
-            <label for="Regular">Regular Shipping</label>
-            <input id="Regular" [(ngModel)]="shipping.shipping_method" type="radio" class="form-control">
+    
+        <div class="form-check">
+            <input type="radio" name = "Expedited" id="Expedited" [(ngModel)]="shipping.shipping_method" class="form-check-button">
+            <label class="form-check-label" for="Expedited">Expedited Shipping</label>
         </div>
+            <br/>
+        <div class = "form-check">
+            <input type="radio" name="Regular" id="Regular" [(ngModel)]="shipping.shipping_method2" class="form-check-button">
+            <label class="form-check-label" for="Regular">Regular Shipping</label>
+            
+        </div>
+
     </div>
     <br />
     <button routerLink=".." class="btn btn-secondary">Back</button>

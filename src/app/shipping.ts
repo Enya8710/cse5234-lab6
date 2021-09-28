@@ -6,6 +6,7 @@ export interface Shipping {
     zipCode: string;
     email: string;
     shipping_method: string;
+    shipping_method2: string;
 }
 
 export const shipping: Shipping = {
@@ -16,5 +17,6 @@ export const shipping: Shipping = {
     zipCode: "",
     email: "",
     shipping_method: "",
+    shipping_method2: ""
 }
 
