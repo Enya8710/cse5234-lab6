@@ -13,6 +13,7 @@ import { ComfirmComponent } from './confirm/confirm.component';
 import { FormsModule } from '@angular/forms';
 import { UtilityService } from './utility.service';
 import { CartComponent } from './cart/cart.component';
+import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CartComponent } from './cart/cart.component';
     ProductListComponent,
     ComfirmComponent,
     CartComponent,
+    ProductListItemComponent,
   ],
   imports: [
     BrowserModule,
