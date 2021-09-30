@@ -13,6 +13,8 @@ import { ComfirmComponent } from './confirm/confirm.component';
 import { FormsModule } from '@angular/forms';
 import { UtilityService } from './utility.service';
 import { CartComponent } from './cart/cart.component';
+import { ProductListItemComponent } from './product-list-item/product-list-item.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ProductPageComponent } from './product-page/product-page.component';
     ProductListComponent,
     ComfirmComponent,
     CartComponent,
-    ProductPageComponent,
+    ProductListItemComponent,
+    ProductItemComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
