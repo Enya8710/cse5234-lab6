@@ -13,6 +13,7 @@ import { ComfirmComponent } from './confirm/confirm.component';
 import { FormsModule } from '@angular/forms';
 import { UtilityService } from './utility.service';
 import { CartComponent } from './cart/cart.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CartComponent } from './cart/cart.component';
     ProductListComponent,
     ComfirmComponent,
     CartComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import { CartComponent } from './cart/cart.component';
       { path: 'summary', component: SummaryComponent },
       { path: 'confirm', component: ComfirmComponent },
       { path: 'cart', component: CartComponent},
+      { path: 'product/:id', component: ProductPageComponent}
     ])
   ],
   providers: [],
