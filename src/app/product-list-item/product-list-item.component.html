@@ -1,1 +1,14 @@
-<p>product-list-item works!</p>
+<div class="p-3 border bg-light align-items-center">
+  <div class="text-center">
+    <img [src]="product.img_src" class="img-thumbnail" />
+    <h3>{{ product.name }}</h3>
+    <h4>{{ product.price | currency }}</h4>
+    <p>
+      {{ product.description }}
+    </p>
+  </div>
+  <div class="row justify-content-space-between">
+    <div class="col"><button class="btn btn-secondary" [routerLink]="['/product', product.id]">View</button></div>
+    <div class="col"><button class="btn btn-secondary" (click)="addToCart()">Buy</button></div>
+  </div>
+</div>
