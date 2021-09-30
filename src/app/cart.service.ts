@@ -11,7 +11,7 @@ export class CartService {
   addToCart(name: string, quantity: number) {
     this.items.forEach((item) => {
       if(item.name === name){
-        item.quantity += quantity
+        item.quantity += quantity;
       }
     })
   }
@@ -30,7 +30,13 @@ export class CartService {
     }
     return this.items;
   }
-
+  removeItem(name: string, quantity: number){
+    this.items.forEach((item) => {
+      if(item.name === name){
+        item.quantity =0;
+      }
+    })
+  }
   constructor() { }
 
   ngOnInit(): void {
