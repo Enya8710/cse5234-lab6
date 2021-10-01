@@ -14,13 +14,6 @@ h2 {
 #Remove_button{
     margin-top:-170%;
 }
-#productli_button{
-    margin-top: 10px;
-    margin-right: 70px;
-    position:absolute;
-    top:0;
-    right:0;
-}
 #input {
     
     position: relative;
@@ -28,5 +21,8 @@ h2 {
     margin-bottom: 1px;
     margin-right: 90px;
     margin-left: 1000px;
+}
+h1{
+    text-align: center;
 }
 

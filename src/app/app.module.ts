@@ -13,7 +13,10 @@ import { ComfirmComponent } from './confirm/confirm.component';
 import { FormsModule } from '@angular/forms';
 import { UtilityService } from './utility.service';
 import { CartComponent } from './cart/cart.component';
-
+import { ProductListItemComponent } from './product-list-item/product-list-item.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +26,9 @@ import { CartComponent } from './cart/cart.component';
     ProductListComponent,
     ComfirmComponent,
     CartComponent,
+    ProductListItemComponent,
+    ProductItemComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +36,7 @@ import { CartComponent } from './cart/cart.component';
     RouterModule,
     ReactiveFormsModule,
     HttpModule,
+    MatCardModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
@@ -38,6 +45,7 @@ import { CartComponent } from './cart/cart.component';
       { path: 'summary', component: SummaryComponent },
       { path: 'confirm', component: ComfirmComponent },
       { path: 'cart', component: CartComponent},
+      { path: 'product/:id', component: ProductPageComponent}
     ])
   ],
   providers: [],

@@ -1,0 +1,12 @@
+footer{
+    text-align: center;
+}
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.navbar{
+    text-align: center;
+}
+ 
