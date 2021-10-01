@@ -5,6 +5,7 @@
     <div class="col-4">
         <h1>{{ item.name }}</h1>
         <h2>{{ item.price | currency }}</h2>
-        <input type="number" [(ngModel)]="item.quantity"/>
+        <button class="btn btn-primary" (click)="addToCart()">Buy</button>
+        <p>{{ item.description }}</p>
     </div>
 </div>

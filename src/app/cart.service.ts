@@ -42,4 +42,12 @@ export class CartService {
   ngOnInit(): void {
 
   }
+
+  getTotalCartItemCount(){
+    let sum = 0;
+    this.items.forEach((item) => {
+      sum += item.quantity;
+    });
+    return sum;
+  }
 }

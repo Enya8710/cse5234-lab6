@@ -6,7 +6,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav me-auto">
       <li class="nav-item active">
         <a class="nav-link " routerLink="">Home</a>
       </li>
@@ -31,6 +31,14 @@
 <br/>
 <hr />
 <div class="container-fluid">
-  <router-outlet></router-outlet>
+  <div class="row">
+    <div class="col-8 offset-md-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-<footer class = "footer-copyright text-center py-3">@Copyright Reserved 2021</footer>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 text-black-50">
+  <div class="container text-center">
+    <small>Copyright &copy; Team 1</small>
+  </div>
+</footer>
