@@ -1,13 +1,13 @@
 <h1>My Store</h1>
-<hr />
-<h2>Product List</h2>
+<!-- <hr />
+<h2>Product List</h2> -->
 
-<button routerLink="/cart" type="button" class="btn btn-secondary">
+<!-- <button routerLink="/cart" type="button" class="btn btn-secondary">
   Shopping Cart
-</button>
+</button> -->
 <div class="container px-4">
   <div class="row g-5">
-    <div *ngFor="let product of products" class="col-5">
+    <div *ngFor="let product of products" class="col-4">
         <app-product-list-item [product]="product"></app-product-list-item>
     </div>
   </div>

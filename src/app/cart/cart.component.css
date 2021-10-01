@@ -1,8 +1,8 @@
 img {
     white-space: pre;
     /* display: block; */
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     float: left;
      
 }
@@ -13,9 +13,9 @@ h2 {
     float: left;
     white-space: pre;
 }
-#Remove_button{
+/* #Remove_button{
     margin-top:-170%;
-}
+} */
 #productli_button{
     margin-top: 10px;
     margin-right: 70px;
@@ -28,11 +28,11 @@ h2 {
     /* padding-right: 900px;
     padding-bottom: 10px; */
     
-    position: relative;
+    /* position: relative;
     margin-top: -40px;
     margin-bottom: 1px;
     margin-right: 90px;
-    margin-left: 1000px;
+    margin-left: 1000px; */
 }
 /* .row {
     display: flex;
