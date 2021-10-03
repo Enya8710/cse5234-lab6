@@ -17,6 +17,8 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { MatCardModule } from '@angular/material/card';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { MatCardModule } from '@angular/material/card';
     CartComponent,
     ProductListItemComponent,
     ProductItemComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { MatCardModule } from '@angular/material/card';
       { path: 'summary', component: SummaryComponent },
       { path: 'confirm', component: ComfirmComponent },
       { path: 'cart', component: CartComponent},
-      { path: 'product/:id', component: ProductPageComponent}
+      { path: 'product/:id', component: ProductPageComponent},
+      { path: 'about-us', component: AboutUsComponent},
+      { path: 'contact-us', component: ContactUsComponent}
     ])
   ],
   providers: [],
