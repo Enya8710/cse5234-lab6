@@ -19,6 +19,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ProductItemComponent,
     ProductPageComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

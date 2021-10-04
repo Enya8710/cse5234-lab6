@@ -15,7 +15,7 @@ export class SummaryComponent implements OnInit {
   shipping = shipping;
   payment = payment;
   price: number;
-  constructor(private utilityService: UtilityService, private cartService: CartService) {
+  constructor(public utilityService: UtilityService, private cartService: CartService) {
     this.price = utilityService.getTotalPrice();
     cartService.session_open = false;
     this.products = cartService.items;

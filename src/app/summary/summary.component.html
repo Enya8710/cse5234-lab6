@@ -1,52 +1,51 @@
 <h1>Order Summary</h1>
 <hr />
-<mat-card class="card1">
-    <mat-card-title>
-        <h3>You Purchased</h3>
-    </mat-card-title>
-    <mat-card-content class = "content">
-        <div *ngFor="let product of products">
-            <span *ngIf="product.quantity > 0">
-                {{ product.name }}
-                {{ product.price | currency }}
-                {{ product.quantity }}
-            </span>
+<div class="row">
+    <div class="col-6">
+        <mat-card class="card1">
+            <div>
+                <mat-card-title>
+                    <h3>Billing Address</h3>
+                </mat-card-title>
+                <mat-card-content class="content">
+                    <p><strong>Credit Card ending in </strong>{{payment.creditCardNumber.substring(payment.creditCardNumber.length
+                        - 4)}}</p>
+                    <p>{{shipping.name}}</p>
+                    <p>{{shipping.address}}</p>
+                    <p>{{shipping.city}}, {{shipping.state}} {{shipping.zipCode}}</p>
+                    <!-- <p><strong>Email | </strong>{{shipping.email}}</p> -->
+                </mat-card-content>
+            </div>
+
+        </mat-card>
+    </div>
+    <div class="col-6">
+        <mat-card class="card1">
+            <div>
+                <mat-card-title>
+                    <h3>Shipping Address</h3>
+                </mat-card-title>
+                <mat-card-content class="content">
+                    <p>{{shipping.name}}</p>
+                    <p>{{shipping.address}}</p>
+                    <p>{{shipping.city}}, {{shipping.state}} {{shipping.zipCode}}</p>
+                    <!-- <p><strong>Email | </strong>{{shipping.email}}</p> -->
+                </mat-card-content>
+            </div>
+
+        </mat-card>
+    </div>
+</div>
+<h2>Total {{ utilityService.getTotalPrice() | currency }}</h2>
+<hr />
+<div class="row">
+    <div *ngFor="let product of products">
+        <div *ngIf="product.quantity > 0">
+            <cart-item [product]="product" [editable]="false"></cart-item>
+            <hr />
         </div>
-
-        <h5>Total {{ price | currency }}</h5>
-    </mat-card-content>
-</mat-card>
-
-
-<mat-card class="card2">
-    <div>
-        <mat-card-title>
-            <h3>Payment Info</h3>
-        </mat-card-title>
-        <mat-card-content class = "content">
-            <p><strong>Credit Card Number | </strong>{{payment.creditCardNumber}}</p>
-            <p><strong>Expiration Date | </strong>{{payment.expirationDate}}</p>
-            <p><strong>CVV | </strong>{{payment.cvvCode}}</p>
-        </mat-card-content>
     </div>
-    <h5>Order EPL-2352-NZ has been sent!</h5>
-</mat-card>
-<mat-card class="card3">
+</div>
 
-    <div>
-        <mat-card-title>
-            <h3>Shipping Info</h3>
-        </mat-card-title>
-        <mat-card-content class = "content">
-            <p><strong>Name | </strong>{{shipping.name}}</p>
-            <p><strong>Address | </strong>{{shipping.address}}</p>
-            <p><strong>City | </strong>{{shipping.city}}</p>
-            <p><strong>State | </strong>{{shipping.state}}</p>
-            <p><strong>Zip Code | </strong>{{shipping.zipCode}}</p>
-            <p><strong>Email | </strong>{{shipping.email}}</p>
-            <!-- <p><strong>Shipping Method: </strong>{{shipping.shipping_method}}</p> -->
-        </mat-card-content>
-    </div>
-</mat-card>
 <button routerLink=".." class="btn btn-secondary">Back</button>
-<button routerLink="/confirm" class="btn btn-primary" type="submit">Complete Order</button>
+<button routerLink="/confirm" class="btn btn-primary float-end" type="submit">Complete Order</button>
