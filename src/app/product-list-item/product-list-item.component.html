@@ -3,9 +3,9 @@
     <img [src]="product.img_src" class="img-thumbnail" />
     <h3>{{ product.name }}</h3>
     <h4>{{ product.price | currency }}</h4>
-    <p>
+    <!-- <p>
       {{ product.description }}
-    </p>
+    </p> -->
   </div>
   <div class="row justify-content-space-between">
     <div class="col-6"><button class="btn btn-secondary" [routerLink]="['/product', product.id]">View</button></div>
