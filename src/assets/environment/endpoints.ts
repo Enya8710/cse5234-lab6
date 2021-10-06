@@ -1,1 +1,1 @@
-export const GET_INVENTORY = "https://microservice.url/inventory";
+export const GET_INVENTORY = "http://localhost:9080/InventoryMicroservice/Inventory";

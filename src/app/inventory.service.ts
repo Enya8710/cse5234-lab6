@@ -12,14 +12,6 @@ export class InventoryService {
   constructor(private http: HttpClient) { }
 
   getInventory(){
-    return this.http.get(GET_INVENTORY)
-    .pipe(
-      map((res: any) => {
-        if (!res.response) {
-          throw new Error('Value expected!');
-        }
-        return res.response;
-      }),
-      catchError(() => of([])));
-  }
+    return this.http.get(GET_INVENTORY);
+    }
 }

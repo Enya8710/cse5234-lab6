@@ -19,6 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,7 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     HttpModule,
     MatCardModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'shipping', component: ShippingInfoComponent },
