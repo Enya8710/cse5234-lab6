@@ -1,6 +1,5 @@
 img {
     white-space: pre;
-    /* display: block; */
     width: 75px;
     height: 75px;
     float: left;
@@ -13,18 +12,18 @@ h2 {
     float: left;
     white-space: pre;
 }
-/* #Remove_button{
-    margin-top:-170%;
-}
-#input {
-    
-    /* position: relative;
-    margin-top: -40px;
-    margin-bottom: 1px;
-    margin-right: 90px;
-    margin-left: 1000px; */
-/* } */
+
 h1{
     text-align: center;
 }
-
+.btn-default{
+    background-color: #004d00;
+    color:#ffffff;
+    /* border-color: #339964; */
+  
+}
+.btn-default:focus{
+    background-color: #004d00;
+    color:#ffffff;
+    /* border-color: #339964; */
+}

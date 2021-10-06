@@ -14,12 +14,13 @@ import { FormsModule } from '@angular/forms';
 import { UtilityService } from './utility.service';
 import { CartComponent } from './cart/cart.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
-import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +31,11 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     ComfirmComponent,
     CartComponent,
     ProductListItemComponent,
-    ProductItemComponent,
     ProductPageComponent,
     AboutUsComponent,
     ContactUsComponent,
-    CartItemComponent
+    CartItemComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,7 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     HttpModule,
     MatCardModule,
     FormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'shipping', component: ShippingInfoComponent },

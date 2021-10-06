@@ -8,7 +8,7 @@
     <div class="col-3">
         <h4 class="item-top-margin">{{ product.price | currency }}</h4>
     </div>
-    <div class="col-4"*ngIf="!editable">{{ product.quantity }}</div>
+    <div class="col-4"*ngIf="!editable"><h4 class="item-top-margin">{{ product.quantity }}</h4></div>
     <div class="col-2" *ngIf="editable">
         <div class="input-group-lg" id="input">
             <input name="product-{{product.id}}" [(ngModel)]="product.quantity" type="number" id="Quantity" class="form-control item-top-margin">
