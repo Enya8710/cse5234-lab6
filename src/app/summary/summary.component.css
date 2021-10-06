@@ -26,8 +26,19 @@ h1{
 }
 .btn{
     text-align: center;
-    /* margin-top: -25% */
+    
 }
 .content{
     display: inline-block;
+}
+.btn-default{
+    background-color: #004d00;
+    color:#ffffff;
+    /* border-color: #339964; */
+  
+}
+.btn-default:focus{
+    background-color: #004d00;
+    color:#ffffff;
+    /* border-color: #339964; */
 }

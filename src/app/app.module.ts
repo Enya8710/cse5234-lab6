@@ -20,6 +20,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductPageComponent,
     AboutUsComponent,
     ContactUsComponent,
-    CartItemComponent
+    CartItemComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'shipping', component: ShippingInfoComponent },

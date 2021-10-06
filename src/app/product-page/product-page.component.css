@@ -1,3 +1,14 @@
 img {
     width: 100%;
 }
+.btn-default{
+    background-color: #4d0026;
+    color:#ffffff;
+    /* border-color: #339964; */
+  
+}
+.btn-default:focus{
+    background-color: #4d0026;
+    color:#ffffff;
+    /* border-color: #339964; */
+}
