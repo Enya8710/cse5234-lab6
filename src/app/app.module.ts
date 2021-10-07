@@ -21,7 +21,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +58,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: 'product/:id', component: ProductPageComponent},
       { path: 'about-us', component: AboutUsComponent},
       { path: 'contact-us', component: ContactUsComponent}
-    ])
+    ]),
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

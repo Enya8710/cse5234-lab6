@@ -32,6 +32,5 @@ export class ProductListComponent {
   addToCart(product: Product): void {
     this.cartService.addToCart(product.name, product.quantity);
     product.quantity = 0;
-  
   }
 }
