@@ -7,6 +7,12 @@ export interface Product {
     img_src: string;
     add: number;
   }
+
+  export interface SimpleProduct {
+    id: number;
+    price: number;
+    quantity: number;
+  }
   
   export const products = [
     {
@@ -57,5 +63,7 @@ export interface Product {
       add: 0
     },
   ];
+
+
   
   

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { OrderService } from '../order.service';
 import { payment } from '../payment';
 import { products } from '../products';
 import { shipping } from '../shipping';
@@ -11,11 +12,11 @@ import { UtilityService } from '../utility.service';
   styleUrls: ['./summary.component.css']
 })
 export class SummaryComponent implements OnInit {
-  products = products;
+  products = [...products];
   shipping = shipping;
   payment = payment;
   price: number;
-  constructor(public utilityService: UtilityService, private cartService: CartService) {
+  constructor(public utilityService: UtilityService, private cartService: CartService, private orderService: OrderService) {
     this.price = utilityService.getTotalPrice();
     cartService.session_open = false;
     this.products = cartService.items;
@@ -24,5 +25,8 @@ export class SummaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  postOrder(): void {
+    this.orderService.postOrder(this.payment, this.shipping, this.products);
+  }
 
 }
