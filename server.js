@@ -41,6 +41,7 @@ app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
                         if(cart[i].quantity > inventory[j].inventory){
                             // res.status(403);
                             res.status(403);
+                            res.send();
                             // return;
                         }
                         break;
@@ -49,6 +50,7 @@ app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
             }
             console.log(inventory);
             res.status(200);
+            res.send();
         });
         return;
     }).on('error', err => {
