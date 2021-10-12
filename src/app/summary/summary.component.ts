@@ -26,7 +26,13 @@ export class SummaryComponent implements OnInit {
   }
 
   postOrder(): void {
-    this.orderService.postOrder(this.payment, this.shipping, this.products);
+    this.orderService.postOrder(this.payment, this.shipping, this.products)
+    .subscribe((res: any) => {
+      this.products = res;
+    },
+    (err: any) => {
+      alert("Error submitting");
+    });
   }
 
 }

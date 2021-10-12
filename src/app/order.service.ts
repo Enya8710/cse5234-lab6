@@ -14,11 +14,11 @@ export class OrderService {
   }
 
   postOrder(payment: Payment, shipping: Shipping, products: Product[]){
-    this.http.post(POST_ORDER, {
+    return this.http.post(POST_ORDER, {
       product: products,
       shipping,
       payment
-    })
+    });
   }
 
 }
