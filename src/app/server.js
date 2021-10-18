@@ -1,7 +1,7 @@
 var express = require('express');
 const http = require('http');
 var app = express();
-const port = process.env.PORT||4020;
+const port = process.env.PORT||3000;
 
 var bodyParser = require('body-parser');
 // create application/json parser
@@ -61,7 +61,7 @@ app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
     // res.send();
 });
 
-var server = app.listen(process.env.PORT || 4020, function () {
+var server = app.listen(process.env.PORT || 3000, function () {
     var host = server.address().address
     var port = server.address().port
     console.log(`Example app listening at http://localhost:${port}`)
