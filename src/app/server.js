@@ -12,8 +12,8 @@ app.use(cors({
     origin: '*'
 }));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+app.get('http://localhost:4200/', (req, res) => {
+    // res.send('Hello World!')
 });
 
 app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
