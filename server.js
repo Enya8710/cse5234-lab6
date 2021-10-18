@@ -1,7 +1,7 @@
 var express = require('express');
 const http = require('http');
 var app = express();
-const port = 3000;
+const port = process.env.PORT||3000;
 
 var bodyParser = require('body-parser');
 // create application/json parser
