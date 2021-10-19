@@ -13,7 +13,7 @@ app.use(cors({
 }));
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('')
 });
 
 app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
