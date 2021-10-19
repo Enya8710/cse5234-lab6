@@ -1,5 +1,4 @@
 var express = require('express');
-const http = require('http');
 var app = express();
 const port = process.env.PORT||3000;
 
@@ -68,6 +67,6 @@ app.get('/InventoryMicroservice/Inventory', async function(req, res) {
 var server = app.listen(port, function () {
     var host = server.address().address
     var port = server.address().port
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at ${host}:${port}`)
 
 });
