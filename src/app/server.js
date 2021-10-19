@@ -1,82 +1,107 @@
-var express = require('express');
-const http = require('http');
-var app = express();
-const port = process.env.PORT||3000;
+import products from "/products.ts"
 
-var bodyParser = require('body-parser');
+var express = require("express");
+const http = require("http");
+var app = express();
+const port = process.env.PORT || 3000;
+
+var bodyParser = require("body-parser");
 // create application/json parser
 var jsonParser = bodyParser.json();
 
-const cors = require('cors');
-app.use(cors({
-    origin: '*'
-}));
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
-app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
-    console.log('Got body:', req.body);
-    let cart = req.body.product;
+app.post("/OrderMicroservice/Order", jsonParser, async function (req, res) {
+  console.log("Got body:", req.body);
+  let cart = req.body.product;
 
-   http.get('http://localhost:9080/InventoryMicroservice/Inventory', response => {
+  http
+    .get(
+      "http://localhost:3000/InventoryMicroservice/Inventory",
+      (response) => {
         let data = [];
-        const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
-        console.log('Status Code:', res.statusCode);
-        console.log('Date in Response header:', headerDate);
+        const headerDate =
+          res.headers && res.headers.date
+            ? res.headers.date
+            : "no response date";
+        console.log("Status Code:", res.statusCode);
+        console.log("Date in Response header:", headerDate);
 
-        response.on('data', chunk => {
-            data.push(chunk);
+        response.on("data", (chunk) => {
+          data.push(chunk);
         });
 
-        response.on('end', () => {
-            console.log('Response ended: ');
-            const inventory = JSON.parse(Buffer.concat(data).toString());
-            let i, j;
-            for(i = 0; i < cart.length; i++){
-                for(j = 0; j < inventory.length; j++){
-                    if(cart[i].id == inventory[j].id){
-                        console.log("comparing", cart[i].name, cart[i].quantity, "and", inventory[j].name, inventory[j].inventory);
-                        if(cart[i].quantity > inventory[j].inventory){
-                            // res.status(403);
-                            res.status(403);
-                            res.send();
-                            // return;
-                        }
-                        break;
-                    }
+        response.on("end", () => {
+          console.log("Response ended: ");
+          const inventory = JSON.parse(Buffer.concat(data).toString());
+          let i, j;
+          for (i = 0; i < cart.length; i++) {
+            for (j = 0; j < inventory.length; j++) {
+              if (cart[i].id == inventory[j].id) {
+                console.log(
+                  "comparing",
+                  cart[i].name,
+                  cart[i].quantity,
+                  "and",
+                  inventory[j].name,
+                  inventory[j].inventory
+                );
+                if (cart[i].quantity > inventory[j].inventory) {
+                  // res.status(403);
+                  res.status(403);
+                  res.send();
+                  // return;
                 }
+                break;
+              }
             }
-            console.log(inventory);
-            res.status(200);
-            res.send();
+          }
+          console.log(inventory);
+          res.status(200);
+          res.send();
         });
         return;
-    }).on('error', err => {
-        console.log('Error: ', err.message);
+      }
+    )
+    .on("error", (err) => {
+      console.log("Error: ", err.message);
     });
 
-    // res.status(200);
-    // res.send();
+  // res.status(200);
+  // res.send();
 });
 
-var server = app.listen(process.env.PORT || 3000, function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log(`Example app listening at http://localhost:${port}`)
+app.post(
+  "/InventoryMicroservice/Inventory",
+  async function (req, res) {
+    res.set("Access-Control-Allow-Origin", "*");
+    res.jsonp(products);
+  }
+);
 
-})
+var server = app.listen(process.env.PORT || 3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log(`Example app listening at http://localhost:${port}`);
+});
 
 const loadinfo = () => {
-    const paymenthttp = new XMLHttpRequest();
-    const shippinghttp = new XMLHttpRequest();
-    shippinghttp.open("GET", "http://localhost:4200/shipping", false);
-    shippinghttp.send();
+  const paymenthttp = new XMLHttpRequest();
+  const shippinghttp = new XMLHttpRequest();
+  shippinghttp.open("GET", "http://localhost:4200/shipping", false);
+  shippinghttp.send();
 
-    paymenthttp.open("GET", "http://localhost:4200/payment", false);
-    paymenthttp.send();
-    const shipping_info = JSON.parse(shippinghttp.responseText);
-    const payment_info = JSON.parse(paymenthttp.responseText);
-
-}
+  paymenthttp.open("GET", "http://localhost:4200/payment", false);
+  paymenthttp.send();
+  const shipping_info = JSON.parse(shippinghttp.responseText);
+  const payment_info = JSON.parse(paymenthttp.responseText);
+};
