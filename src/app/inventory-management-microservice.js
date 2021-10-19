@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 // create application/json parser
 var jsonParser = bodyParser.json();
 
-export const products = [
+const products = [
     {
       id: 1,
       name: 'Aoenium',
@@ -61,6 +61,13 @@ app.use(cors({
     origin: '*'
 }));
 
-app.post('/InventoryMicroservice/Inventory', async function(req, res) {
+app.get('/InventoryMicroservice/Inventory', async function(req, res) {
     res.jsonp(products);
-})
+});
+
+var server = app.listen(port, function () {
+    var host = server.address().address
+    var port = server.address().port
+    console.log(`Example app listening at http://localhost:${port}`)
+
+});

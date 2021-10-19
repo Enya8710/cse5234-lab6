@@ -1,7 +1,7 @@
 var express = require('express');
 const http = require('http');
 var app = express();
-const port = process.env.PORT||3000;
+const port = process.env.PORT||3001;
 
 var bodyParser = require('body-parser');
 // create application/json parser
@@ -20,7 +20,7 @@ app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
     console.log('Got body:', req.body);
     let cart = req.body.product;
 
-   http.get('https://cse5234.herokuapp.com/InventoryMicroservice/Inventory', response => {
+   http.get('http://cse5234.herokuapp.com/InventoryMicroservice/Inventory', response => {
         let data = [];
         const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
         console.log('Status Code:', res.statusCode);
@@ -61,7 +61,7 @@ app.post('/OrderMicroservice/Order', jsonParser, async function (req, res) {
     // res.send();
 });
 
-var server = app.listen(process.env.PORT || 3000, function () {
+var server = app.listen(port, function () {
     var host = server.address().address
     var port = server.address().port
     console.log(`Example app listening at http://localhost:${port}`)
