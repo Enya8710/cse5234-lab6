@@ -1,4 +1,5 @@
 export interface Shipping {
+    id: number;
     name: string;
     address: string;
     city: string;
@@ -10,6 +11,7 @@ export interface Shipping {
 }
 
 export const shipping: Shipping = {
+    id: 0,
     name: "",
     address: "",
     city: "",
