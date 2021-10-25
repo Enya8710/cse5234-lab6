@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Product, products } from '../products';
+import { Component } from '@angular/core';
+import { Product } from '../products';
 import { FormBuilder } from '@angular/forms';
-import { FormGroup, FormControl } from '@angular/forms';
 import { CartService } from '../cart.service';
 import { InventoryService } from '../inventory.service';
 
@@ -24,6 +23,7 @@ export class ProductListComponent {
     this.cartService.clearCart();
     this.inventoryService.getInventory()
     .subscribe((res: any) => {
+      console.log(res);
       this.products = res;
     });
   }

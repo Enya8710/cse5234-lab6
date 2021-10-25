@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { OrderService } from '../order.service';
 import { payment } from '../payment';
-import { products } from '../products';
 import { shipping } from '../shipping';
 import { UtilityService } from '../utility.service';
 
@@ -12,7 +11,7 @@ import { UtilityService } from '../utility.service';
   styleUrls: ['./summary.component.css']
 })
 export class SummaryComponent implements OnInit {
-  products = [...products];
+  products;
   shipping = shipping;
   payment = payment;
   price: number;
