@@ -10,27 +10,29 @@ import { UtilityService } from '../utility.service';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-  item : Product;
-  id: string | null;
+  //non-null assertions are used here to link the id of the products to
+  //the actual products. changes need to be made so that this is not the case
+  item: Product;
+  id: string;
 
   constructor(private cartService: CartService,
     private route: ActivatedRoute,
     private utilityService: UtilityService) {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id')!; 
     debugger;
     this.item = {} as Product;
     if(this.id != null){
-      this.item = products[parseInt(this.id)];
+      this.item = products.find(item => item.id == parseInt(this.id))!;
     }
   }
   
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id')!;
     debugger;
     this.item = {} as Product;
     if(this.id != null){
-      this.item = products[parseInt(this.id)];
+      this.item = products.find(item => item.id == parseInt(this.id))!;
     }
   }
 
