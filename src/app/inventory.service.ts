@@ -13,5 +13,5 @@ export class InventoryService {
 
   getInventory(){
     return this.http.get(GET_INVENTORY_HOSTED);
-    }
+  }
 }

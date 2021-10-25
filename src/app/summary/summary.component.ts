@@ -12,6 +12,8 @@ import { UtilityService } from '../utility.service';
 })
 export class SummaryComponent implements OnInit {
   products;
+
+  //shipping and payment aren't saved
   shipping = shipping;
   payment = payment;
   price: number;
