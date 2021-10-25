@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 import { payment } from '../payment';
-import { products } from '../products';
 import { UtilityService } from '../utility.service';
 
 @Component({
@@ -20,6 +19,9 @@ export class PaymentInfoComponent {
     private utilityService: UtilityService
   ) {
     this.price = this.utilityService.getTotalPrice();
+  }
 
+  onSubmit(){
+    this.payment.id = Math.random() * 10000;
   }
 }

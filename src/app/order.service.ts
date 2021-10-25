@@ -17,7 +17,8 @@ export class OrderService {
     return this.http.post(POST_ORDER_HOSTED, {
       product: products,
       shipping,
-      payment
+      payment,
+      id: Math.random() * 10000,
     });
   }
 
