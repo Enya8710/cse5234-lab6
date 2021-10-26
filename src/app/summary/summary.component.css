@@ -1,24 +1,12 @@
 .card1 {
-    max-width: 400px;
-    margin-bottom: 8px;
     background-color:#e0e5df;
-    /* text-align:center; */
-    /* position :absolute; */
 }
 .card2 {
-    max-width: 400px;
-    margin-bottom: 8px;
     background-color:#e0e5df;
     text-align:center;
-    /* position :absolute; */
 }
 .card3 {
     background-color:#e0e5df;
-    position :relative;
-    margin-top: -35%;
-    margin-bottom: 15%;
-    margin-left: 45%;
-    padding-bottom: 2%;
     text-align:center;
 }
 h1{
@@ -30,15 +18,4 @@ h1{
 }
 .content{
     display: inline-block;
-}
-.btn-default{
-    background-color: #004d00;
-    color:#ffffff;
-    /* border-color: #339964; */
-  
-}
-.btn-default:focus{
-    background-color: #004d00;
-    color:#ffffff;
-    /* border-color: #339964; */
 }

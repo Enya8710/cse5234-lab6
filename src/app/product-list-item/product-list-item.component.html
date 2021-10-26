@@ -8,7 +8,7 @@
     <h4>{{ product.price | currency }}</h4>
   </div>
   <div class="row justify-content-space-between animated bounceIn">
-    <div class="col-6"><button class="btn btn-secondary" [routerLink]="['/product', product.id]">View</button></div>
-    <div class="col-6"><button class="btn btn-default" (click)="addToCart()">Buy</button></div>
+    <div class="col-6"><button mdbBtn class="btn btn-secondary" [routerLink]="['/product', product.id]" color = "unique" mdbWavesEffect>View</button></div>
+    <div class="col-6"><button mdbBtn class="btn btn-default" (click)="addToCart()" color = "mdb-color" mdbWavesEffect>Buy</button></div>
   </div>
 </div>
