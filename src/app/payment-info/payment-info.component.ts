@@ -22,6 +22,6 @@ export class PaymentInfoComponent {
   }
 
   onSubmit(){
-    this.payment.id = Math.random() * 10000;
+    this.payment.id = Math.round(Math.random() * 10000);
   }
 }

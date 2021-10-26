@@ -18,7 +18,7 @@ export class OrderService {
       product: products,
       shipping,
       payment,
-      id: Math.random() * 10000,
+      id: Math.round(Math.random() * 10000),
     });
   }
 

@@ -19,7 +19,7 @@ export class ShippingInfoComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit():void {
-    shipping.id = Math.random() * 10000;
+    shipping.id = Math.round(Math.random() * 10000);
   }
   submit():void{
 
