@@ -12,7 +12,7 @@ app.use(requireHTTPS);
 
 app.use(express.static(`./dist/lab5`));
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", 'https://cse5234-order-microservice.herokuapp.com/OrderMicroservice/Order'); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
