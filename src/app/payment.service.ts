@@ -13,7 +13,7 @@ export class PaymentService {
   constructor(private http: HttpClient) {
   }
 
-  postOrder(payment: Payment){
+  postPayment(payment: Payment){
     return this.http.post(POST_PAYMENT_HOSTED, {
       payment,
     });
