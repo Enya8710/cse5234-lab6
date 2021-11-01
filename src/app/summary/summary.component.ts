@@ -38,12 +38,5 @@ export class SummaryComponent implements OnInit {
   }
   postPayment(): void {
     this.paymentService.postPayment(this.payment)
-    .subscribe((res: any) => {
-      this.products = res;
-    },
-    (err: any) => {
-      alert("Error submitting");
-    });
   }
-
 }
