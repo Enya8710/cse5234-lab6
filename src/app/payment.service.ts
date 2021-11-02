@@ -14,9 +14,7 @@ export class PaymentService {
   }
 
   postPayment(payment: Payment){
-    return this.http.post(POST_PAYMENT_HOSTED, {
-      payment,
-    });
+    return this.http.post(POST_PAYMENT_HOSTED, payment);
   }
 
 }
