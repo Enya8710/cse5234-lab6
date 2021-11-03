@@ -43,18 +43,11 @@
         </div>
     </div>
     <div class="row md-form">
-    
-        <div class="form-check">
-            <input type="radio" name = "Expedited" id="Expedited" [(ngModel)]="shipping.shipping_method" class="form-check-button">
-            <label class="form-check-label" for="Expedited">Expedited Shipping</label>
-        </div>
-            <br/>
-        <div class = "form-check">
-            <input type="radio" name="Regular" id="Regular" [(ngModel)]="shipping.shipping_method2" class="form-check-button">
-            <label class="form-check-label" for="Regular">Regular Shipping</label>
-            
-        </div>
-
+        <p>Shipping Method</p>
+        <select class="browser-default custom-select" [(ngModel)]="shipping.shipping_method">
+            <option name = "Expedited" id="Expedited" value ="Expedited" selected>Expedited Shipping</option>
+            <option name="Regular" id="Regular" value="Regular">Regular Shipping</option>
+        </select>
     </div>
     <br />
     <button  mdbBtn routerLink="/cart" color="mdb-color" class="btn btn-secondary" mdbWavesEffect>Back</button>
