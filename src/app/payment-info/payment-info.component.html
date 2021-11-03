@@ -1,7 +1,7 @@
 
 <h1>Payment Info</h1>
 <hr />
-
+<div class = "fadeIn animated">
 <div class="form-group md-form">
     <label for="CreditCardNumber">Credit Card Number</label>
     <input mdbInput id="CreditCardNumber" [(ngModel)]="payment.creditCardNumber" type="text" class="form-control">
@@ -17,10 +17,11 @@
     <label for="CVVCode">CVV Code</label>
     <input mdbInput id="CVVCode" [(ngModel)]="payment.cvvCode" type="text" class="form-control">
 </div>
+
 <h2>Total {{ price | currency }}</h2>
 
 <!-- Total Amount of payment -->
 <button mdbBtn routerLink="/shipping" color="mdb-color" class="btn btn-secondary" mdbWavesEffect>Back</button>
 <button mdbBtn routerLink="/summary"  color = "unique" class="btn btn-default float-end" (click)="onSubmit()" mdbWavesEffect>Submit</button>
-
+</div>
 

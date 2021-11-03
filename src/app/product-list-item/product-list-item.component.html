@@ -1,14 +1,13 @@
-
 <div class="p-3 border bg-light align-items-center">
-  <div class="text-center animated bounceIn ">
+  <div class="text-center">
+    
+    <img [src]="product.img_src" class="hoverable img-thumbnail img-fluid animated rollIn" />
 
-    <img [src]="product.img_src" class="img-thumbnail animated bounceIn" />
-
-    <h3>{{ product.name }}</h3>
-    <h4>{{ product.price | currency }}</h4>
+    <h3 >{{ product.name }}</h3>
+    <h4 >{{ product.price | currency }}</h4>
   </div>
-  <div class="row justify-content-space-between animated bounceIn">
-    <div class="col-6"><button mdbBtn class="btn btn-secondary" [routerLink]="['/product', product.id]" color = "unique" mdbWavesEffect>View</button></div>
-    <div class="col-6"><button mdbBtn class="btn btn-default" (click)="addToCart()" color = "mdb-color" mdbWavesEffect>Buy</button></div>
+  <div class="row justify-content-space-between ">
+    <div class="col-6 animated rotateInDownLeft"><button mdbBtn class="btn btn-secondary" [routerLink]="['/product', product.id]" color = "unique" mdbWavesEffect>View</button></div>
+    <div class="col-6 animated rotateInDownRight"><button mdbBtn class="btn btn-default" (click)="addToCart()" color = "mdb-color" mdbWavesEffect>Buy</button></div>
   </div>
 </div>

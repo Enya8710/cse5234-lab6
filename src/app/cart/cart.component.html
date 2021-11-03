@@ -2,7 +2,7 @@
 
 
 <hr />
-<div class="container">
+<div class="container fadeIn animated">
     <div *ngFor="let product of items">
         <div *ngIf="product.quantity > 0">
             <cart-item [product]="product" [editable]="true"></cart-item>
