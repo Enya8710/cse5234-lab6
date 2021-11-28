@@ -1,39 +1,38 @@
 <h1>Order Summary</h1>
 <hr />
-<div class="row">
-    <div class="col-6">
-        <mat-card class="card1">
-            <div>
-                <mat-card-title>
+<div class="row card-deck fadeIn animated">
+    <div class="col-sm-6 mb-3 ">
+        <div class="card">
+            <div class = "card-body">
+                <div class = "card-title">
                     <h3>Billing Address</h3>
-                </mat-card-title>
-                <mat-card-content class="content">
+                </div>
+                <div class="card-text">
                     <p><strong>Credit Card ending in </strong>{{payment.creditCardNumber.substring(payment.creditCardNumber.length
                         - 4)}}</p>
                     <p>{{shipping.name}}</p>
                     <p>{{shipping.address}}</p>
                     <p>{{shipping.city}}, {{shipping.state}} {{shipping.zipCode}}</p>
                     <!-- <p><strong>Email | </strong>{{shipping.email}}</p> -->
-                </mat-card-content>
+                </div>
             </div>
-
-        </mat-card>
+        </div>
     </div>
-    <div class="col-6">
-        <mat-card class="card1">
-            <div>
-                <mat-card-title>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class = "card-body">
+                <div class = "card-title">
                     <h3>Shipping Address</h3>
-                </mat-card-title>
-                <mat-card-content class="content">
+                </div>
+                <div class="card-text">
                     <p>{{shipping.name}}</p>
                     <p>{{shipping.address}}</p>
                     <p>{{shipping.city}}, {{shipping.state}} {{shipping.zipCode}}</p>
                     <!-- <p><strong>Email | </strong>{{shipping.email}}</p> -->
-                </mat-card-content>
+                </div>
             </div>
 
-        </mat-card>
+        </div>
     </div>
 </div>
 <h2>Total {{ utilityService.getTotalPrice() | currency }}</h2>
@@ -47,5 +46,5 @@
     </div>
 </div>
 
-<button routerLink="/payment" class="btn btn-secondary">Back</button>
-<button routerLink="/confirm" class="btn btn-default float-end" type="submit" (click)="postOrder()">Complete Order</button>
+<button mdbBtn routerLink="/payment" class="btn btn-secondary" color = "mdb-color" mdbWavesEffect>Back</button>
+<button mdbBtn routerLink="/confirm" class="btn btn-default float-end" color = "unique" type="submit" (click)="postOrder()" mdbWavesEffect>Complete Order</button>

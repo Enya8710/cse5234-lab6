@@ -9,3 +9,8 @@ h4.item-top-margin {
 input.item-top-margin {
     margin-top: 25px;
 }
+img {
+    white-space: pre;
+    width: 75px;
+    height: 75px;
+}

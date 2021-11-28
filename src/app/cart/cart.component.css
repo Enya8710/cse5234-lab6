@@ -16,14 +16,4 @@ h2 {
 h1{
     text-align: center;
 }
-.btn-default{
-    background-color: #004d00;
-    color:#ffffff;
-    /* border-color: #339964; */
-  
-}
-.btn-default:focus{
-    background-color: #004d00;
-    color:#ffffff;
-    /* border-color: #339964; */
-}
+

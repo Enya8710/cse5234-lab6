@@ -1,68 +1,57 @@
 
-<div class="container-fluid">
-
+<div class="container-fluid fadeIn animated">
     <div class="row">
         <h1>Shipping Info</h1>
         <hr />
     </div>
-
-  
-
-    <div class="row">
+    <div class="row md-form">
         <div class="form-group">
             <label for="Name">Name</label>
-            <input id="Name" [(ngModel)]="shipping.name" type="text" class="form-control">
+            <input mdbInput id="Name" [(ngModel)]="shipping.name" type="text" class="form-control">
         </div>
     </div>
-    <div class="row">
+    <div class="row md-form">
         <div class="form-group">
             <label for="Address">Address</label>
-            <input id="Address" [(ngModel)]="shipping.address" type="text" class="form-control">
+            <input mdbInput id="Address" [(ngModel)]="shipping.address" type="text" class="form-control">
         </div>
     </div>
-    <div class="row">
+    <div class="row md-form">
         <div class="col-4">
             <div class="form-group">
                 <label for="City">City</label>
-                <input id="City" [(ngModel)]="shipping.city" type="text" class="form-control">
+                <input mdbInput id="City" [(ngModel)]="shipping.city" type="text" class="form-control">
             </div>
         </div>
         <div class="col-4">
             <div class="form-group">
                 <label for="State">State</label>
-                <input id="State" [(ngModel)]="shipping.state" type="text" class="form-control">
+                <input mdbInput id="State" [(ngModel)]="shipping.state" type="text" class="form-control">
             </div>
         </div>
         <div class="col-4">
             <div class="form-group">
                 <label for="Zip Code">Zip Code</label>
-                <input id="Zip Code" [(ngModel)]="shipping.zipCode" type="text" class="form-control">
+                <input mdbInput id="Zip Code" [(ngModel)]="shipping.zipCode" type="text" class="form-control">
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row md-form form-sm">
         <div class="form-group">
             <label for="Email">Email</label>
-            <input id="Email" [(ngModel)]="shipping.email" type="email" class="form-control">
+            <input mdbInput id="Email" [(ngModel)]="shipping.email" type="email" class="form-control form-control-sm">
         </div>
     </div>
-    <div class="row">
-    
-        <div class="form-check">
-            <input type="radio" name = "Expedited" id="Expedited" [(ngModel)]="shipping.shipping_method" class="form-check-button">
-            <label class="form-check-label" for="Expedited">Expedited Shipping</label>
-        </div>
-            <br/>
-        <div class = "form-check">
-            <input type="radio" name="Regular" id="Regular" [(ngModel)]="shipping.shipping_method2" class="form-check-button">
-            <label class="form-check-label" for="Regular">Regular Shipping</label>
-            
-        </div>
-
+    <div class="row md-form">
+        <p>Shipping Method</p>
+        <select class="browser-default custom-select" [(ngModel)]="shipping.shipping_method">
+            <option name = "Expedited" id="Expedited" value ="Expedited" selected>Expedited Shipping</option>
+            <option name="Regular" id="Regular" value="Regular">Regular Shipping</option>
+        </select>
     </div>
     <br />
-    <button routerLink="/cart" class="btn btn-secondary">Back</button>
-    <button routerLink="/payment" class="btn btn-default float-end" (click)="onSubmit()">Confirm</button>
+    <button  mdbBtn routerLink="/cart" color="mdb-color" class="btn btn-secondary" mdbWavesEffect>Back</button>
+    <button  mdbBtn routerLink="/payment" color = "unique" class="btn btn-default float-end" (click)="onSubmit()" mdbWavesEffect>Confirm</button>
 
 </div>
 

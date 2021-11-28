@@ -35,5 +35,5 @@ export class SummaryComponent implements OnInit {
       alert("Error submitting");
     });
   }
-
+  
 }

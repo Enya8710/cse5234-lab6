@@ -1,11 +1,11 @@
 <div class="row animated bounceIn">
     <div class="col-4 offset-md-2">
-        <img [src]="item.img_src" alt="Image not available"/>
+        <img [src]="item.img_src" alt="Image not available" class = "img-thumbnail"/>
     </div>
     <div class="col-4">
         <h1>{{ item.name }}</h1>
         <h2>{{ item.price | currency }}</h2>
-        <button class="btn btn-default" (click)="addToCart()">Buy</button>
+        <button mdbBtn class="btn btn-default" (click)="addToCart()" color = "unique" mdbWavesEffect>Buy</button>
         <br/><br/>
         <p>{{ item.description }}</p>
     </div>

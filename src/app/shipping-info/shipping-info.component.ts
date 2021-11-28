@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, products } from '../products';
-import { FormBuilder } from '@angular/forms';
 import { shipping } from '../shipping';
-
+import { FormControl, Validators, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-shipping-info',
   templateUrl: './shipping-info.component.html',
